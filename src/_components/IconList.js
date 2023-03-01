@@ -21105,6 +21105,6 @@ export const materialIcons = {
 
 export default function CustomIcon(props) {
   const { iconName, ...rest } = props
-  const Custom = materialIcons[iconName.toLowerCase()]
-  return !!Custom ? <Custom {...rest} /> : <></>
+  const Custom = materialIcons[iconName.toLowerCase()] || QuestionMark
+  return <Custom {...rest} />
 }

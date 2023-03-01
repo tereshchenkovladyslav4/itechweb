@@ -1,54 +1,54 @@
-import React, { Component, createRef } from "react";
-import clsx from "clsx";
-import { emphasize } from "@mui/material/styles";
-import withStyles from '@mui/styles/withStyles';
-import WaveSurfer from "wavesurfer.js";
-import Countdown from "../_components/Countdown";
-import { Fab, CircularProgress, Box } from "@mui/material";
-import IconManager from "../_components/IconManager";
-import "./MediaPlayer.css";
-import { transcriptService } from "../_services/transcriptService";
-import Transcript from "./Transcript";
-import { Alert } from '@mui/material';
+import React, { Component, createRef } from 'react'
+import clsx from 'clsx'
+import { emphasize } from '@mui/material/styles'
+import withStyles from '@mui/styles/withStyles'
+import WaveSurfer from 'wavesurfer.js'
+import Countdown from '../_components/Countdown'
+import { Fab, CircularProgress, Box } from '@mui/material'
+import IconManager from '../_components/IconManager'
+import './MediaPlayer.css'
+import { transcriptService } from '../_services/transcriptService'
+import Transcript from './Transcript'
+import { Alert } from '@mui/material'
 
 const styles = (theme) => ({
   fab: {
-    margin: "auto 5px",
+    margin: 'auto 5px',
     minWidth: 56,
     minHeight: 56,
     color: theme.palette.primary.main,
     backgroundColor: theme.palette.primary.light,
     zIndex: 4,
-    "&:hover": {
+    '&:hover': {
       backgroundColor: emphasize(theme.palette.primary.main, 0.15),
     },
   },
   countdown: {
-    margin: "49px 10px 0 0",
-    height: "75%",
+    margin: '49px 10px 0 0',
+    height: '75%',
     fontFamily: theme.typography.fontFamily,
   },
-});
+})
 
 const CircularProgressLoading = () => {
   return (
-    <Box position="relative" display="inline-flex">
+    <Box position='relative' display='inline-flex'>
       <CircularProgress />
     </Box>
-  );
-};
+  )
+}
 
 const PLAY_STATE = {
   paused: {
-    icon: "PlayArrow",
+    icon: 'PlayArrow',
   },
   playing: {
-    icon: "Pause",
+    icon: 'Pause',
   },
   replay: {
-    icon: "Replay",
+    icon: 'Replay',
   },
-};
+}
 
 // Props:
 // {
@@ -60,9 +60,9 @@ const PLAY_STATE = {
 
 class MediaPlayer extends Component {
   constructor(props) {
-    super(props);
-    this.ref = createRef();
-    this.id = "waveform-" + Math.floor(Math.random() * 1000);
+    super(props)
+    this.ref = createRef()
+    this.id = 'waveform-' + Math.floor(Math.random() * 1000)
   }
 
   state = {
@@ -72,16 +72,16 @@ class MediaPlayer extends Component {
     replay: false,
     width: this.ref?.current?.clientWidth || 0,
     loadPercent: 0,
-    error: "",
-  };
+    error: '',
+  }
 
   componentDidMount() {
-    var canvas2d = document.createElement("canvas").getContext("2d");
+    var canvas2d = document.createElement('canvas').getContext('2d')
 
-    var gradient = canvas2d?.createLinearGradient(0, 0, 0, 140);
+    var gradient = canvas2d?.createLinearGradient(0, 0, 0, 140)
     if (gradient) {
-      gradient.addColorStop(0, "yellow");
-      gradient.addColorStop(1, this.props.theme.palette.primary.main);
+      gradient.addColorStop(0, 'yellow')
+      gradient.addColorStop(1, this.props.theme.palette.primary.main)
       // gradient.addColorStop(1, this.props.theme.palette.secondary.main);
     }
 
@@ -91,22 +91,22 @@ class MediaPlayer extends Component {
       barMinHeight: 1,
       cursorWidth: 1,
       container: `#${this.id}`,
-      backend: "WebAudio",
+      backend: 'WebAudio',
       height: 200,
       progressColor: gradient,
       responsive: true,
       waveColor: this.props.theme.palette.disable.main,
-      cursorColor: "transparent",
-    });
-    this.waveform.on("ready", this._handleReady);
-    this.waveform.on("audioprocess", () => this._handleProcess(this.waveform.isPlaying()));
-    this.waveform.on("seek", () => this._handleProcess(true, this.props?.callback?.onSeek));
-    this.waveform.on("play", this._handlePlayState);
-    this.waveform.on("pause", this._handlePauseState);
-    this.waveform.on("finish", this._handleFinishState);
-    this.waveform.on("error", this._handleError);
+      cursorColor: 'transparent',
+    })
+    this.waveform.on('ready', this._handleReady)
+    this.waveform.on('audioprocess', () => this._handleProcess(this.waveform.isPlaying()))
+    this.waveform.on('seek', () => this._handleProcess(true, this.props?.callback?.onSeek))
+    this.waveform.on('play', this._handlePlayState)
+    this.waveform.on('pause', this._handlePauseState)
+    this.waveform.on('finish', this._handleFinishState)
+    this.waveform.on('error', this._handleError)
     // TODO: load bar.. currently this just displays a spinner as percantage reported back only after fetch complete & while control reading data
-    this.waveform.on("loading", this._handleLoadProgress);
+    this.waveform.on('loading', this._handleLoadProgress)
 
     if (this.ref?.current?.clientWidth) {
       this.setState({
@@ -116,15 +116,15 @@ class MediaPlayer extends Component {
         replay: false,
         width: this.ref?.current?.clientWidth,
         loadPercent: 0,
-      });
+      })
     }
-    this._loadWaveform(this.props.path);
+    this._loadWaveform(this.props.path)
   }
 
   componentDidUpdate(prevProps) {
-    const width = this.ref.current.clientWidth;
+    const width = this.ref.current.clientWidth
     if (prevProps.path !== this.props.path) {
-      this.waveform.empty();
+      this.waveform.empty()
 
       this.setState(
         {
@@ -134,128 +134,118 @@ class MediaPlayer extends Component {
           replay: false,
           width: width,
           loadPercent: 0,
-          error: "",
+          error: '',
         },
-        this._loadWaveform(this.props.path)
-      );
+        this._loadWaveform(this.props.path),
+      )
     } else if (width !== this.state.width) {
       this.setState({
         width: width,
-      });
-      this.waveform.drawBuffer();
+      })
+      this.waveform.drawBuffer()
     }
   }
 
   componentWillUnmount() {
-    this.waveform._onResize.clear();
-    this.waveform.destroy();
+    if (this.waveform) {
+      this.waveform._onResize.clear()
+      this.waveform.destroy()
+    }
   }
 
   _loadWaveform(path) {
-    if (!path) return;
+    if (!path) return
 
-    this.waveform.load(path);
+    this.waveform.load(path)
   }
 
   _handleLoadProgress = (percent, xhr) => {
-    this.setState({ loadPercent: percent });
-  };
+    this.setState({ loadPercent: percent })
+  }
 
   _handleFinishState = () => {
-    this.setState({ playState: PLAY_STATE.replay, replay: true });
-  };
+    this.setState({ playState: PLAY_STATE.replay, replay: true })
+  }
 
   _handlePauseState = () => {
     if (!this.state.replay) {
-      this.setState({ playState: PLAY_STATE.paused });
+      this.setState({ playState: PLAY_STATE.paused })
     }
-  };
+  }
 
   _handlePlayState = () => {
-    this.setState({ playState: PLAY_STATE.playing });
-  };
+    this.setState({ playState: PLAY_STATE.playing })
+  }
 
   _handleReady = () => {
-    const duration = this.waveform.getDuration().toFixed(0);
-    this.setState({ duration: duration, timeLeft: duration, error: "" });
-  };
+    const duration = this.waveform.getDuration().toFixed(0)
+    this.setState({ duration: duration, timeLeft: duration, error: '' })
+  }
 
   // just passed a string
   _handleError = (error) => {
-    this.setState({ duration: 0, timeLeft: 0, error: "Failed to load audio file" });
-    this.waveform.empty();
-    this.waveform.drawer.clearWave();
-  };
+    this.setState({ duration: 0, timeLeft: 0, error: 'Failed to load audio file' })
+    this.waveform.empty()
+    this.waveform.drawer.clearWave()
+  }
 
   _handleProcess = (handle, onSeek) => {
-    const timeLeft =
-      this.waveform.getDuration().toFixed(0) - this.waveform.getCurrentTime().toFixed(0);
+    const timeLeft = this.waveform.getDuration().toFixed(0) - this.waveform.getCurrentTime().toFixed(0)
 
-    if (!!handle && this.state.timeLeft === timeLeft) return;
+    if (!!handle && this.state.timeLeft === timeLeft) return
 
     if (onSeek) {
-      onSeek(this.waveform.getCurrentTime());
+      onSeek(this.waveform.getCurrentTime())
     }
 
     this.setState({
       timeLeft: timeLeft,
       playState: this.waveform.isPlaying() ? PLAY_STATE.playing : PLAY_STATE.paused,
-    });
-  };
+    })
+  }
 
   _handlePlay = () => {
-    this.waveform.playPause();
+    this.waveform.playPause()
 
     if (this.props?.callback) {
-      const time = this.waveform.getCurrentTime();
-      this.waveform.isPlaying()
-        ? this.props.callback?.onPlay(time)
-        : this.props.callback?.onPause(time);
+      const time = this.waveform.getCurrentTime()
+      this.waveform.isPlaying() ? this.props.callback?.onPlay(time) : this.props.callback?.onPause(time)
     }
 
-    this.setState({ replay: false });
-  };
+    this.setState({ replay: false })
+  }
 
   // seek from the transcript
   _seek = (timePos) => {
     if (this.waveform) {
-      this.waveform.setCurrentTime(timePos);
+      this.waveform.setCurrentTime(timePos)
       if (this.props?.callback) {
-        this.props.callback?.onSeek(timePos);
+        this.props.callback?.onSeek(timePos)
       }
     }
-  };
+  }
 
-  _currentPosition = () => (this.waveform ? this.waveform.getCurrentTime() : 0);
+  _currentPosition = () => (this.waveform ? this.waveform.getCurrentTime() : 0)
 
-  _showLoading = () => this.state.duration === 0 && this.state.error === "";
+  _showLoading = () => this.state.duration === 0 && this.state.error === ''
 
   render() {
-    const { classes } = this.props;
+    const { classes } = this.props
     return (
       <>
         {this.state.error && (
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Alert severity="error">{this.state.error}</Alert>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Alert severity='error'>{this.state.error}</Alert>
           </div>
         )}
 
-        <div className="waveformContainer" ref={this.ref}>
-          <Fab
-            size="large"
-            role="playpause"
-            onClick={this._handlePlay}
-            className={clsx(classes.fab)}
-          >
+        <div className='waveformContainer' ref={this.ref}>
+          <Fab size='large' role='playpause' onClick={this._handlePlay} className={clsx(classes.fab)}>
             {<IconManager icon={this.state.playState.icon} />}
           </Fab>
-          <div
-            id={this.id}
-            data-testid={this.id}
-            style={{ visibility: this._showLoading() ? "hidden" : null }}
-          />
+          <div id={this.id} data-testid={this.id} style={{ visibility: this._showLoading() ? 'hidden' : null }} />
           {this._showLoading() && (
-            <div style={{ position: "absolute", top: "150px" }}>
+            <div style={{ position: 'absolute', top: '150px' }}>
               <CircularProgressLoading />
             </div>
           )}
@@ -281,8 +271,8 @@ class MediaPlayer extends Component {
           />
         )}
       </>
-    );
+    )
   }
 }
 
-export default withStyles(styles, { withTheme: true })(MediaPlayer);
+export default withStyles(styles, { withTheme: true })(MediaPlayer)
