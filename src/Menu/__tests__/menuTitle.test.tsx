@@ -1,7 +1,7 @@
 import React from "react";
 import MenuTitle from "../MenuTitle";
 import { render } from "@testing-library/react";
-import ThemeProvider from "@mui/material/styles/ThemeProvider";
+import { ThemeProvider} from "@mui/material/styles";
 import { createTheme, adaptV4Theme } from "@mui/material";
 import { StyledEngineProvider } from '@mui/material/styles';
 

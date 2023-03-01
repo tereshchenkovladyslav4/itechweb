@@ -2,7 +2,7 @@ import React, { FC, ReactElement } from "react";
 import { render, RenderOptions } from "@testing-library/react";
 import { createTheme } from "@mui/material";
 import { StyledEngineProvider } from "@mui/material/styles";
-import ThemeProvider from "@mui/material/styles/ThemeProvider";
+import { ThemeProvider} from "@mui/material/styles";
 
 const AllTheProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
   // const theme = createTheme(adaptV4Theme({}));
