@@ -1,0 +1,118 @@
+.logo {
+  height: 40px;
+  width: 163px;
+}
+.selected {
+  font-weight: bold !important;
+}
+
+/*Dial holder down */
+.dialHolderdown {
+  position: fixed;
+  width: 47px;
+  height: 30px;
+  opacity: 0;
+  top: -64px;
+  margin-left: 50px;
+  display: grid;
+}
+.dialHolderdown:hover {
+  height: 100px;
+}
+.tabContainer {
+  height: 30px;
+}
+.tabContainer .MuiTab-wrapper:hover {
+  color: #99a6b5;
+}
+.tabContainer:hover > .dialHolderdown,
+.tabContainer .react-draggable-dragging {
+  opacity: 1 !important;
+  top: 38px !important;
+}
+.tabContainer > .dialHolderdown button {
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, opacity 0.8s;
+  opacity: 0;
+  transform: scale(0) rotate(-80deg);
+}
+.tabContainer > .dialHolderdown button:nth-child(1) {
+  transition-delay: 600ms;
+}
+.tabContainer > .dialHolderdown button:nth-child(2) {
+  transition-delay: 700ms;
+}
+.tabContainer > .dialHolderdown button:nth-child(3) {
+  transition-delay: 800ms;
+}
+.tabContainer:hover > .dialHolderdown button,
+.react-draggable-dragging button {
+  opacity: 1 !important;
+  transform: scale(0.8) rotate(0deg) !important;
+}
+
+/* Dial holder right */
+.dialHolderright {
+  position: absolute;
+  width: 140px;
+  height: 42px;
+  opacity: 0;
+  right: 140px;
+}
+.menuContainer:hover .dialHolderright,
+.menuContainer .react-draggable-dragging {
+  right: -140px !important;
+  opacity: 1 !important;
+}
+.menuContainer > .dialHolderright button {
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, opacity 0.8s;
+  opacity: 0;
+  transform: scale(0) rotate(-80deg);
+}
+.menuContainer > .dialHolderright button:nth-child(1) {
+  transition-delay: 600ms;
+}
+.menuContainer > .dialHolderright button:nth-child(2) {
+  transition-delay: 700ms;
+}
+.menuContainer > .dialHolderright button:nth-child(3) {
+  transition-delay: 800ms;
+}
+.menuContainer:hover > .dialHolderright button,
+.react-draggable-dragging button {
+  opacity: 1 !important;
+  transform: scale(0.8) rotate(0deg) !important;
+}
+
+/* Dial holder left */
+.dialHolderleft {
+  position: absolute;
+  width: 140px;
+  height: 42px;
+  opacity: 0;
+  left: -140px;
+  z-index: 1400;
+}
+.menuContainer:hover .dialHolderleft,
+.menuContainer .react-draggable-dragging {
+  left: 0px !important;
+  opacity: 1 !important;
+}
+.menuContainer > .dialHolderleft button {
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, opacity 0.8s;
+  opacity: 0;
+  transform: scale(0) rotate(-80deg);
+}
+.menuContainer > .dialHolderleft button:nth-child(1) {
+  transition-delay: 600ms;
+}
+.menuContainer > .dialHolderleft button:nth-child(2) {
+  transition-delay: 700ms;
+}
+.menuContainer > .dialHolderleft button:nth-child(3) {
+  transition-delay: 800ms;
+}
+.menuContainer:hover > .dialHolderleft button,
+.react-draggable-dragging button {
+  opacity: 1 !important;
+  transform: scale(0.8) rotate(0deg) !important;
+}

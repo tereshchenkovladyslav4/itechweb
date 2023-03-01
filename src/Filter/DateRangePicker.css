@@ -1,0 +1,21 @@
+.dateRangeContainer {
+  /* width: 100%; */
+  margin: 4px;
+  flex-wrap: wrap;
+  flex-flow: row;
+  display: inherit;
+}
+/* reset all values on this class */
+.react-datepicker-wrapper {
+  all:initial;
+}
+.dateRangeContainer .MuiTextField-root {
+  margin-right: 5px;
+}
+.react-datepicker__day.react-datepicker__day--keyboard-selected {
+  background: none;
+  color: black;
+}
+.react-datepicker-popper {
+  z-index: 1301; /* Mui dialog is 1300 */
+}

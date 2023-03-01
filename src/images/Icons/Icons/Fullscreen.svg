@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="17px" viewBox="0 0 19 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/Fullscreen</title>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-442.000000, -102.000000)" id="Icons/Fullscreen">
+            <g transform="translate(429.000000, 92.000000)">
+                <rect id="ViewBox" x="0" y="0" width="45" height="36"></rect>
+                <path d="M16,10 L29,10 C30.6568542,10 32,11.3431458 32,13 L32,24 C32,25.6568542 30.6568542,27 29,27 L16,27 C14.3431458,27 13,25.6568542 13,24 L13,13 C13,11.3431458 14.3431458,10 16,10 L16,10 Z M16,11 C14.8954305,11 14,11.8954305 14,13 L14,24 C14,25.1045695 14.8954305,26 16,26 L29,26 C30.1045695,26 31,25.1045695 31,24 L31,13 C31,11.8954305 30.1045695,11 29,11 L16,11 Z M21,14 L28,14 L28,21 L27,21 L27,15.707 L19.854,22.853 L19.146,22.146 L26.293,15 L21,15 L21,14 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/Error</title>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-536.000000, -50.000000)" id="Icons/Error">
+            <g transform="translate(523.000000, 41.000000)">
+                <g id="Credit/Debit-Card-Icon" stroke="#F37037" stroke-opacity="0">
+                    <rect id="Rectangle" x="0.5" y="0.5" width="44" height="35"></rect>
+                </g>
+                <path d="M22,9 C26.9705627,9 31,13.0294373 31,18 C31,22.9705627 26.9705627,27 22,27 C17.0294373,27 13,22.9705627 13,18 C13,13.0294373 17.0294373,9 22,9 Z M23.116,20.152 L21.232,20.152 L21.232,22 L23.116,22 L23.116,20.152 Z M23.056,13.432 L21.28,13.432 L21.28,15.736 L21.736,19.432 L22.588,19.432 L23.056,15.736 L23.056,13.432 Z" id="Error-Icon" fill="#AC2C2C"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/Profile/Light</title>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-85.000000, -191.000000)" id="Icons/Profile/Light" stroke="#6D6E71">
+            <g transform="translate(85.000000, 191.000000)">
+                <g id="Icons/User" transform="translate(8.000354, 6.000000)">
+                    <path d="M6.99964646,9.5 C8.79670994,9.5 10.4243977,10.2010918 11.6023261,11.3369514 C12.7153637,12.4102376 13.4263993,13.8722028 13.4941604,15.4945054 C11.6498615,16.7623293 9.41404575,17.5 6.99964646,17.5 C4.57793756,17.5 2.33579203,16.7580316 0.505372912,15.4959508 C0.57292976,13.8731818 1.28383403,12.4107746 2.39688478,11.3372264 C3.57476671,10.2011479 5.20251273,9.5 6.99964646,9.5 Z" id="Combined-Shape"></path>
+                    <circle id="Oval" cx="6.99964646" cy="4" r="3.5"></circle>
+                </g>
+                <circle id="Oval" cx="15" cy="15" r="14.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

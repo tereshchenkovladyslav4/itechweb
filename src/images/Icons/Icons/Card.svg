@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="16px" viewBox="0 0 23 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/Card</title>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-433.000000, -51.000000)" id="Icons/Card" stroke="#F37037">
+            <g transform="translate(422.000000, 41.000000)">
+                <rect id="Rectangle" stroke-opacity="0" x="0.5" y="0.5" width="44" height="35"></rect>
+                <rect id="Rectangle" x="11.5" y="10.5" width="22" height="15" rx="2"></rect>
+                <rect id="Rectangle" x="14.5" y="22.5" width="11" height="1" rx="0.5"></rect>
+                <rect id="Rectangle" x="14.5" y="20.5" width="6" height="1" rx="0.5"></rect>
+                <rect id="Rectangle" x="11.5" y="14.5" width="22" height="1" rx="0.5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

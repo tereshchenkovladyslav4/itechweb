@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="16px" viewBox="0 0 9 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/Arrow/Right</title>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-152.000000, -50.000000)" id="Icons/Arrow/Right" stroke="#F37037">
+            <g transform="translate(137.000000, 36.000000)">
+                <rect id="Rectangle" stroke-opacity="0" transform="translate(18.000000, 22.500000) scale(-1, 1) rotate(-90.000000) translate(-18.000000, -22.500000) " x="-4" y="5" width="44" height="35"></rect>
+                <path d="M20.5,17 L21.5,27 L20.5,18 L11.5,18 L20.5,17 Z" id="Combined-Shape" transform="translate(16.250000, 22.250000) scale(-1, -1) rotate(225.000000) translate(-16.250000, -22.250000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

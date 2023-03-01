@@ -1,0 +1,4 @@
+/* Hide the first menu item in highcharts context menu - Display Full Screen */
+.highcharts-menu > li:nth-of-type(1){
+    display: none;
+}

@@ -1,0 +1,36 @@
+.horizontal_transition-enter,
+.horizontal_transition-appear {
+  width: 0;
+}
+.horizontal_transition-enter-active {
+  width: 205px;
+  transition: width 1000ms;
+}
+.horizontal_transition-enter-done label {
+  opacity: 1 !important;
+}
+.horizontal_transition-exit {
+  width: 205px;
+}
+.horizontal_transition-exit-active {
+  width: 0;
+  transition: width 1000ms;
+}
+
+.flash-enter,
+.flash-appear,
+.searchBox {
+  background-color: #e6e7e8;
+  transition: background-color 250ms ease-in-out;
+}
+.flash-enter-active {
+  background-color: #4a7ab5;
+  transition: background-color 250ms ease-in-out;
+}
+.flash-enter-done {
+  background-color: #e6e7e8;
+  transition: background-color 250ms ease-in-out;
+}
+.flash-exit {
+  display: none !important;
+}

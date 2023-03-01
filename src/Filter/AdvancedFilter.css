@@ -1,0 +1,43 @@
+.dataSourceContainer {
+  background-color: #eee;
+  border: 1px solid #bbb;
+  min-height: 30px;
+  margin: 3px;
+  display: flex;
+  flex-direction: column;
+}
+.filterContainer {
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  min-height: 30px;
+  margin: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  width: 99%;
+  padding-top: 2px;
+  /* overflow-y: hidden;
+  overflow-x: auto; */
+}
+.filterContainer:hover {
+  background-color: rgba(131, 131, 131, 0.212);
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.filterContainer button:not(.react-js-cron-clear-button) {
+  margin: auto 0;
+}
+.filterControlBar {
+  width: 98%;
+  display: flex;
+  /* flex-direction: row-reverse; */
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.filterControlBar button {
+  margin: 6px 6px;
+}

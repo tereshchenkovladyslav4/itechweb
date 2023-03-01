@@ -1,0 +1,48 @@
+/* body {
+  font-family: "Arial", sans-serif;
+  font-size: 10.6px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+} */
+@font-face {
+  font-family: "HelveticaNeueLTPro-Th";
+  src: local("HelveticaNeueLTPro-Th"), url(./fonts/HelveticaNeueLTPro-Th.otf) format("truetype");
+}
+@font-face {
+  font-family: "HelveticaNeueLTPro-Roman";
+  src: local("HelveticaNeueLTPro-Roman"),
+    url(./fonts/HelveticaNeueLTPro-Roman.otf) format("truetype");
+}
+@font-face {
+  font-family: "HelveticaNeueLTPro-Lt";
+  src: local("HelveticaNeueLTPro-Lt"), url(./fonts/HelveticaNeueLTPro-Lt.otf) format("truetype");
+}
+body {
+  font-family: "HelveticaNeueLTPro-Th", sans-serif;
+  /* background-image: url("images/backgroundGradient.png");
+  background-size: cover;
+  background-attachment: fixed; */
+  background: #20242d;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #707070 #ccc;
+}
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: #ccc;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #707070;
+  border-radius: 20px;
+  border: 3px solid #ccc;
+}
+/* default background for browser is black when full screen */
+*:fullscreen, *::backdrop
+{
+    background-color: #E6E7E8;
+}

@@ -1,0 +1,12 @@
+/* To replicate size in other pop up menus */
+.select-menu-container {
+  display: grid;
+  width: 42px;
+}
+.select-menu-container-row {
+  height: 42px;
+}
+/* .select-menu-container button,
+.select-menu-container-row button {
+  transform: scale(0.8);
+} */

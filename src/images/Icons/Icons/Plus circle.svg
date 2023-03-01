@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/Plus circle</title>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-542.000000, -101.000000)" id="Icons/Plus-circle">
+            <g transform="translate(529.000000, 92.000000)">
+                <rect id="ViewBox" x="0" y="0" width="45" height="36"></rect>
+                <path d="M18,18 L22,18 L22,14 L23,14 L23,18 L27,18 L27,19 L23,19 L23,23 L22,23 L22,19 L18,19 L18,18 Z M22.5,9 C27.7467051,9 32,13.2532949 32,18.5 C32,23.7467051 27.7467051,28 22.5,28 C17.2532949,28 13,23.7467051 13,18.5 C13,13.2532949 17.2532949,9 22.5,9 L22.5,9 Z M22.5,10 C17.8055796,10 14,13.8055796 14,18.5 C14,23.1944204 17.8055796,27 22.5,27 C27.1944204,27 31,23.1944204 31,18.5 C31,13.8055796 27.1944204,10 22.5,10 L22.5,10 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

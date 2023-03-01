@@ -1,0 +1,63 @@
+export default interface SelectedGridRowType {
+  currentSelected: any;
+  $id: string;
+  currentVersion: number;
+  datasource: string;
+  dateArchived: any;
+  dateArchivedString: any;
+  dateInserted: number;
+  dateInsertedString: string;
+  dateModified: number;
+  dateModifiedString: string;
+  documentGuid: string;
+  duration: number;
+  fileSize: number;
+  fileTypeAbb: string;
+  fileTypeDescription: string;
+  filterGroupColor: string;
+  fromAddress: string;
+  fromIdentifier: string;
+  fromName: string;
+  fsiGuid: FsiGuid;
+  gid: number | string;
+  hasAttachment: boolean;
+  iTechControlFileTypeRowId: number;
+  iTechDataFromUserIdentifierRowId: number;
+  iTechDataFromUserRowId: number;
+  iTechDataOwnerSecurityObjectRowId: number;
+  iTechDataOwnerUserRowId: number;
+  iTechDataToUserIdentifierRowId: number;
+  iTechDataToUserRowId: number;
+  id: string;
+  name: string;
+  obDateCreated: number;
+  obDateCreatedString: string;
+  owner: string;
+  ownerName: string;
+  rowId: number;
+  summary: string;
+  toAddress: string;
+  toIdentifier: string;
+  toName: string;
+  transcriptTxt: any;
+  transcriptXml: any;
+  iTechControlTableReferenceTypeChildRowId: number;
+  taskType: string;
+  taskTypeDescription: string;
+  outcomeType: string;
+  taskStatusType: string;
+  taskStatusTypeDescription: string;
+  taskName: string;
+  dateStartActualString: string;
+  dateStartScheduledString: string;
+  outcomeNotes: string;
+  iTechDataTaskRootRowId: number;
+  durationMinActual: number;
+  durationMinScheduled: number;
+  iTechDataTaskOutcomeTypeRowId: number;
+  args: string;
+}
+
+interface FsiGuid {
+  GuidString: string;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Tick</title>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-732.000000, -54.000000)" id="Icon/Tick">
+            <g transform="translate(717.000000, 41.000000)">
+                <g id="Credit/Debit-Card-Icon" stroke="#F37037" stroke-opacity="0">
+                    <rect id="Rectangle" x="0.5" y="0.5" width="44" height="35"></rect>
+                </g>
+                <g id="Group-2" transform="translate(22.954951, 16.954951) rotate(-45.000000) translate(-22.954951, -16.954951) translate(15.454951, 13.204951)" stroke="#34B025">
+                    <path d="M0.573223305,0.573223305 C0.819035594,0.5 0.881535594,0.527982203 0.926776695,0.573223305 C0.972017797,0.618464406 1,0.680964406 1,0.75 L1,6.49896079 L14.25,6.5 C14.3190356,6.5 14.3815356,6.5279822 14.4267767,6.5732233 C14.4720178,6.61846441 14.5,6.68096441 14.5,6.75 C14.5,6.81903559 14.4720178,6.88153559 14.4267767,6.9267767 C14.3815356,6.9720178 14.3190356,7 14.25,7 L0.75,7 C0.680964406,7 0.618464406,6.9720178 0.573223305,6.9267767 C0.527982203,6.88153559 0.5,6.81903559 0.5,6.75 L0.5,0.75 C0.5,0.680964406 0.527982203,0.618464406 0.573223305,0.573223305 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
