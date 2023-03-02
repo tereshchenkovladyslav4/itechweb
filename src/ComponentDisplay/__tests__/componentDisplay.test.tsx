@@ -1,11 +1,9 @@
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import ComponentDisplay from '../ComponentDisplay'
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { ComponentType } from '../componentType'
-import { ThemeProvider } from '@mui/material/styles'
-import { StyledEngineProvider } from '@mui/material/styles'
-import { glLightTheme } from '../../_theme/glLightTheme'
+import { render } from '../../Test.helpers/test-utils'
 
 // mock getAll for tableService module
 jest.mock('../../_services/tableService', () => ({
@@ -33,70 +31,32 @@ describe('<ComponentDisplay/> component', () => {
     const comp = {
       data: { componentType: 'Preview' },
     }
-    var container
-    await act(async () => {
-      container = render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={glLightTheme}>
-            <ComponentDisplay component={comp} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      ).container
-    })
+    const { container } = await act(async () => render(<ComponentDisplay component={comp} dataIsSet={() => {}} />))
     expect(container.querySelectorAll("[data-testid='preview-undefined']").length).toBe(1)
   })
 
-  it('renders Wizard', () => {
+  it('renders Wizard', async () => {
     const comp = {
       data: { componentType: 'Wizard' },
     }
-    var container
-    act(() => {
-      container = render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={glLightTheme}>
-            <ComponentDisplay component={comp} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      ).container
-    })
+    const { container } = await act(async () => render(<ComponentDisplay component={comp} dataIsSet={() => {}} />))
     expect(container.querySelectorAll('div').length).toBeGreaterThan(1)
   })
 
-  it('renders Wizard when null', () => {
+  it('renders Wizard when null', async () => {
     const comp = {
       data: null,
     }
-    var container
-
-    act(() => {
-      container = render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={glLightTheme}>
-            <ComponentDisplay component={comp} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      ).container
-    })
+    const { container } = await act(async () => render(<ComponentDisplay component={comp} dataIsSet={() => {}} />))
     expect(container.querySelectorAll('div').length).toBeGreaterThan(1)
   })
 
-  it('renders data when no matching component type', () => {
+  it('renders data when no matching component type', async () => {
     const comp = {
       data: { componentType: 'nomatch' },
     }
-    var container
-
-    act(() => {
-      container = render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={glLightTheme}>
-            <ComponentDisplay component={comp} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      ).container
-    })
-    expect(container.querySelector('div div').textContent).toMatch(/nomatch/)
+    const { container } = await act(async () => render(<ComponentDisplay component={comp} dataIsSet={() => {}} />))
+    expect(container.querySelector('div div')?.textContent).toMatch(/nomatch/)
   })
 
   it('renders Tree Filter', async () => {
@@ -106,17 +66,7 @@ describe('<ComponentDisplay/> component', () => {
         data: [],
       },
     }
-    var container
-
-    await act(async () => {
-      container = render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={glLightTheme}>
-            <ComponentDisplay component={comp} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      ).container
-    })
+    const { container } = await act(async () => render(<ComponentDisplay component={comp} dataIsSet={() => {}} />))
     expect(container.querySelectorAll('.treeView').length).toBe(1)
   })
 
@@ -124,17 +74,7 @@ describe('<ComponentDisplay/> component', () => {
     const comp = {
       data: { componentType: 'Advanced Filter' },
     }
-    var container
-
-    await act(async () => {
-      container = render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={glLightTheme}>
-            <ComponentDisplay component={comp} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      ).container
-    })
+    const { container } = await act(async () => render(<ComponentDisplay component={comp} dataIsSet={() => {}} />))
     expect(container.querySelectorAll('.filterControlBar').length).toBe(1)
   })
 
@@ -142,17 +82,7 @@ describe('<ComponentDisplay/> component', () => {
     const comp = {
       data: { componentType: 'Properties' },
     }
-    var container
-
-    await act(async () => {
-      container = render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={glLightTheme}>
-            <ComponentDisplay component={comp} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      ).container
-    })
+    const { container } = await act(async () => render(<ComponentDisplay component={comp} dataIsSet={() => {}} />))
     expect(container.querySelectorAll("[data-testid='properties-undefined']").length).toBe(1)
   })
 
@@ -170,13 +100,7 @@ describe('<ComponentDisplay/> component', () => {
     }
 
     await act(async () => {
-      render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={glLightTheme}>
-            <ComponentDisplay component={comp} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      )
+      render(<ComponentDisplay component={comp} dataIsSet={() => {}} />)
     })
 
     expect(await screen.getByText('Loading Results')).toBeTruthy()
