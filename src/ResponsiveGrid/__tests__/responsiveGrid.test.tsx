@@ -1,21 +1,13 @@
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import ResponsiveGrid from '../ResponsiveGrid'
-import { render, screen } from '@testing-library/react'
-import { ThemeProvider } from '@mui/material/styles'
-import { StyledEngineProvider } from '@mui/material/styles'
-import { glLightTheme } from '../../_theme/glLightTheme'
+import { screen } from '@testing-library/react'
+import { render } from '../../Test.helpers/test-utils'
 
 describe('<ResponsiveGrid/> component', () => {
   it('renders the responsive grid', () => {
     act(() => {
-      render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={glLightTheme}>
-            <ResponsiveGrid parent={{ rowId: '' }} service={null} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      )
+      render(<ResponsiveGrid parent={{ rowId: '' }} service={null} />)
     })
     expect(screen.getByText('Add Item')).toBeTruthy()
   })

@@ -1,11 +1,9 @@
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import Menu from '../Menu'
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { BehaviorSubject } from 'rxjs'
-import { ThemeProvider } from '@mui/material/styles'
-import { StyledEngineProvider } from '@mui/material/styles'
-import { glLightTheme } from '../../_theme/glLightTheme'
+import { render } from '../../Test.helpers/test-utils'
 
 describe('<Menu/> component', () => {
   it('renders the menu', async () => {
@@ -37,17 +35,13 @@ describe('<Menu/> component', () => {
     const mockComponentService = {}
     await act(async () => {
       render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={glLightTheme}>
-            <Menu
-              menuService={mockMenuService}
-              tabService={mockTabService}
-              authenticationService={mockAuthService}
-              componentService={mockComponentService}
-              location={location}
-            />
-          </ThemeProvider>
-        </StyledEngineProvider>,
+        <Menu
+          menuService={mockMenuService}
+          tabService={mockTabService}
+          authenticationService={mockAuthService}
+          componentService={mockComponentService}
+          location={location}
+        />,
       )
     })
     expect(screen.getByText('Log out')).toBeTruthy()

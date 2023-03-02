@@ -1,27 +1,17 @@
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import Wizard from '../Wizard'
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { WIZARD_STATE } from '../../_components/wizardState'
-import { ThemeProvider } from '@mui/material/styles'
-import { createTheme } from '@mui/material'
-import { StyledEngineProvider } from '@mui/material/styles'
+import { render } from '../../Test.helpers/test-utils'
 
 describe('<Wizard/> component', () => {
-  const theme = createTheme({})
-
   it('renders the defaulwizard', () => {
     const comp = {
       wizardType: undefined,
     }
     act(() => {
-      render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={theme}>
-            <Wizard config={comp} updateData={() => {}} area={''} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      )
+      render(<Wizard config={comp} updateData={() => {}} area={''} />)
     })
     // "Choose component" text seems to have been removed...
     expect(screen.getByText('Grid')).toBeTruthy()
@@ -32,13 +22,7 @@ describe('<Wizard/> component', () => {
       wizardState: WIZARD_STATE.CONFIGURE_GRID,
     }
     act(() => {
-      render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={theme}>
-            <Wizard config={comp} updateData={() => {}} area={''} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      )
+      render(<Wizard config={comp} updateData={() => {}} area={''} />)
     })
     expect(screen.getByTestId('tableConfigure')).toBeTruthy()
   })
@@ -48,13 +32,7 @@ describe('<Wizard/> component', () => {
       wizardState: WIZARD_STATE.CONFIGURE_TREE,
     }
     act(() => {
-      render(
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={theme}>
-            <Wizard config={comp} updateData={() => {}} area={''} />
-          </ThemeProvider>
-        </StyledEngineProvider>,
-      )
+      render(<Wizard config={comp} updateData={() => {}} area={''} />)
     })
     expect(screen.getByText('Configure Tree')).toBeTruthy()
   })
